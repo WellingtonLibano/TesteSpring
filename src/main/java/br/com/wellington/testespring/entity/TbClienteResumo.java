@@ -15,11 +15,8 @@ import java.math.BigDecimal;
 public class TbClienteResumo implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Column(name="ID_CLIENTE", nullable=false)
-	private int idCliente;
-
-	@Column(name="ID_CLIENTE_RESUMO", nullable=false)
-	private int idClienteResumo;
+	@Column(name="CD_CLIENTE", nullable=false, precision=10)
+	private BigDecimal cdCliente;
 
 	@Column(name="ID_PROCESSAMENTO", nullable=false)
 	private int idProcessamento;
@@ -33,20 +30,12 @@ public class TbClienteResumo implements Serializable {
 	public TbClienteResumo() {
 	}
 
-	public int getIdCliente() {
-		return this.idCliente;
+	public BigDecimal getCdCliente() {
+		return this.cdCliente;
 	}
 
-	public void setIdCliente(int idCliente) {
-		this.idCliente = idCliente;
-	}
-
-	public int getIdClienteResumo() {
-		return this.idClienteResumo;
-	}
-
-	public void setIdClienteResumo(int idClienteResumo) {
-		this.idClienteResumo = idClienteResumo;
+	public void setCdCliente(BigDecimal cdCliente) {
+		this.cdCliente = cdCliente;
 	}
 
 	public int getIdProcessamento() {

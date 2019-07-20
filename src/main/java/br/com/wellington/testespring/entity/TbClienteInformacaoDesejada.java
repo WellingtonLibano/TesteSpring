@@ -15,16 +15,24 @@ import java.math.BigDecimal;
 public class TbClienteInformacaoDesejada implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Column(name="CD_CLIENTE", nullable=false, precision=10)
+	private BigDecimal cdCliente;
+
 	@Column(name="FL_FIXA", precision=10)
 	private BigDecimal flFixa;
-
-	@Column(name="ID_CLIENTE", nullable=false)
-	private int idCliente;
 
 	@Column(name="ID_GRUPO_INFORMACOES", nullable=false)
 	private int idGrupoInformacoes;
 
 	public TbClienteInformacaoDesejada() {
+	}
+
+	public BigDecimal getCdCliente() {
+		return this.cdCliente;
+	}
+
+	public void setCdCliente(BigDecimal cdCliente) {
+		this.cdCliente = cdCliente;
 	}
 
 	public BigDecimal getFlFixa() {
@@ -33,14 +41,6 @@ public class TbClienteInformacaoDesejada implements Serializable {
 
 	public void setFlFixa(BigDecimal flFixa) {
 		this.flFixa = flFixa;
-	}
-
-	public int getIdCliente() {
-		return this.idCliente;
-	}
-
-	public void setIdCliente(int idCliente) {
-		this.idCliente = idCliente;
 	}
 
 	public int getIdGrupoInformacoes() {

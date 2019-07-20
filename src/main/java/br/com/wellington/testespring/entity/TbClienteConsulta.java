@@ -2,6 +2,7 @@ package br.com.wellington.testespring.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 
 
@@ -15,6 +16,9 @@ import java.util.Date;
 public class TbClienteConsulta implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Column(name="CD_CLIENTE", nullable=false, precision=10)
+	private BigDecimal cdCliente;
+
 	@Temporal(TemporalType.DATE)
 	@Column(name="DH_CONSULTA", nullable=false)
 	private Date dhConsulta;
@@ -22,13 +26,21 @@ public class TbClienteConsulta implements Serializable {
 	@Column(name="ID_CARTEIRA", nullable=false)
 	private int idCarteira;
 
-	@Column(name="ID_CLIENTE", nullable=false)
-	private int idCliente;
-
 	@Column(name="ID_CLIENTE_CONSULTA", nullable=false)
 	private int idClienteConsulta;
 
+	@Column(name="NU_DOCUMENTO", nullable=false, precision=10)
+	private BigDecimal nuDocumento;
+
 	public TbClienteConsulta() {
+	}
+
+	public BigDecimal getCdCliente() {
+		return this.cdCliente;
+	}
+
+	public void setCdCliente(BigDecimal cdCliente) {
+		this.cdCliente = cdCliente;
 	}
 
 	public Date getDhConsulta() {
@@ -47,20 +59,20 @@ public class TbClienteConsulta implements Serializable {
 		this.idCarteira = idCarteira;
 	}
 
-	public int getIdCliente() {
-		return this.idCliente;
-	}
-
-	public void setIdCliente(int idCliente) {
-		this.idCliente = idCliente;
-	}
-
 	public int getIdClienteConsulta() {
 		return this.idClienteConsulta;
 	}
 
 	public void setIdClienteConsulta(int idClienteConsulta) {
 		this.idClienteConsulta = idClienteConsulta;
+	}
+
+	public BigDecimal getNuDocumento() {
+		return this.nuDocumento;
+	}
+
+	public void setNuDocumento(BigDecimal nuDocumento) {
+		this.nuDocumento = nuDocumento;
 	}
 
 }

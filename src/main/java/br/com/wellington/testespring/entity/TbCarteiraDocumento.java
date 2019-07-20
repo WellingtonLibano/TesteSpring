@@ -1,17 +1,9 @@
 package br.com.wellington.testespring.entity;
 
 import java.io.Serializable;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 
 /**
@@ -19,23 +11,13 @@ import javax.persistence.TemporalType;
  * 
  */
 @Entity
-@IdClass(TbCarteiraDocumentoId.class)
 @Table(name="TB_CARTEIRA_DOCUMENTOS")
 @NamedQuery(name="TbCarteiraDocumento.findAll", query="SELECT t FROM TbCarteiraDocumento t")
 public class TbCarteiraDocumento implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@Column(name="ID_CARTEIRA", nullable=false)
-	private int idCarteira;
-
-	@Id
-	@Column(name="ID_CLIENTE", nullable=false)
-	private int idCliente;
-
-	@Id
-	@Column(name="ID_DOCUMENTO", nullable=false)
-	private int idDocumento;
+	@Column(name="CD_CLIENTE", nullable=false, precision=10)
+	private BigDecimal cdCliente;
 
 	@Column(name="CD_INTERNO_CLIENTE", length=50)
 	private String cdInternoCliente;
@@ -50,9 +32,22 @@ public class TbCarteiraDocumento implements Serializable {
 
 	@Column(name="FL_ATIVO", precision=10)
 	private BigDecimal flAtivo;
-	
+
+	@Column(name="ID_CARTEIRA", nullable=false)
+	private int idCarteira;
+
+	@Column(name="NU_DOCUMENTO", nullable=false, precision=10)
+	private BigDecimal nuDocumento;
 
 	public TbCarteiraDocumento() {
+	}
+
+	public BigDecimal getCdCliente() {
+		return this.cdCliente;
+	}
+
+	public void setCdCliente(BigDecimal cdCliente) {
+		this.cdCliente = cdCliente;
 	}
 
 	public String getCdInternoCliente() {
@@ -95,20 +90,12 @@ public class TbCarteiraDocumento implements Serializable {
 		this.idCarteira = idCarteira;
 	}
 
-	public int getIdCliente() {
-		return this.idCliente;
+	public BigDecimal getNuDocumento() {
+		return this.nuDocumento;
 	}
 
-	public void setIdCliente(int idCliente) {
-		this.idCliente = idCliente;
-	}
-
-	public int getIdDocumento() {
-		return this.idDocumento;
-	}
-
-	public void setIdDocumento(int idDocumento) {
-		this.idDocumento = idDocumento;
+	public void setNuDocumento(BigDecimal nuDocumento) {
+		this.nuDocumento = nuDocumento;
 	}
 
 }

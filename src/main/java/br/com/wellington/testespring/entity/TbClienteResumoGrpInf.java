@@ -15,24 +15,27 @@ import java.math.BigDecimal;
 public class TbClienteResumoGrpInf implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Column(name="ID_CLIENTE_RESUMO", nullable=false)
-	private int idClienteResumo;
+	@Column(name="CD_CLIENTE", nullable=false, precision=10)
+	private BigDecimal cdCliente;
 
 	@Column(name="ID_GRUPO_INFORMACOES", nullable=false)
 	private int idGrupoInformacoes;
 
-	@Column(name="QTD_TOTAL", nullable=false, precision=10)
-	private BigDecimal qtdTotal;
+	@Column(name="ID_PROCESSAMENTO", nullable=false)
+	private int idProcessamento;
+
+	@Column(name="QT_TOTAL", nullable=false, precision=10)
+	private BigDecimal qtTotal;
 
 	public TbClienteResumoGrpInf() {
 	}
 
-	public int getIdClienteResumo() {
-		return this.idClienteResumo;
+	public BigDecimal getCdCliente() {
+		return this.cdCliente;
 	}
 
-	public void setIdClienteResumo(int idClienteResumo) {
-		this.idClienteResumo = idClienteResumo;
+	public void setCdCliente(BigDecimal cdCliente) {
+		this.cdCliente = cdCliente;
 	}
 
 	public int getIdGrupoInformacoes() {
@@ -43,12 +46,20 @@ public class TbClienteResumoGrpInf implements Serializable {
 		this.idGrupoInformacoes = idGrupoInformacoes;
 	}
 
-	public BigDecimal getQtdTotal() {
-		return this.qtdTotal;
+	public int getIdProcessamento() {
+		return this.idProcessamento;
 	}
 
-	public void setQtdTotal(BigDecimal qtdTotal) {
-		this.qtdTotal = qtdTotal;
+	public void setIdProcessamento(int idProcessamento) {
+		this.idProcessamento = idProcessamento;
+	}
+
+	public BigDecimal getQtTotal() {
+		return this.qtTotal;
+	}
+
+	public void setQtTotal(BigDecimal qtTotal) {
+		this.qtTotal = qtTotal;
 	}
 
 }

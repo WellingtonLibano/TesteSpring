@@ -2,6 +2,7 @@ package br.com.wellington.testespring.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 
 /**
@@ -14,16 +15,27 @@ import javax.persistence.*;
 public class TbInformacoesAcompanhada implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Column(name="CD_CLIENTE", nullable=false, precision=10)
+	private BigDecimal cdCliente;
+
 	@Column(name="ID_CARTEIRA", nullable=false)
 	private int idCarteira;
-
-	@Column(name="ID_CLIENTE", nullable=false)
-	private int idCliente;
 
 	@Column(name="ID_GRUPO_INFORMACOES", nullable=false)
 	private int idGrupoInformacoes;
 
+	@Column(name="NU_DOCUMENTO", nullable=false, precision=10)
+	private BigDecimal nuDocumento;
+
 	public TbInformacoesAcompanhada() {
+	}
+
+	public BigDecimal getCdCliente() {
+		return this.cdCliente;
+	}
+
+	public void setCdCliente(BigDecimal cdCliente) {
+		this.cdCliente = cdCliente;
 	}
 
 	public int getIdCarteira() {
@@ -34,20 +46,20 @@ public class TbInformacoesAcompanhada implements Serializable {
 		this.idCarteira = idCarteira;
 	}
 
-	public int getIdCliente() {
-		return this.idCliente;
-	}
-
-	public void setIdCliente(int idCliente) {
-		this.idCliente = idCliente;
-	}
-
 	public int getIdGrupoInformacoes() {
 		return this.idGrupoInformacoes;
 	}
 
 	public void setIdGrupoInformacoes(int idGrupoInformacoes) {
 		this.idGrupoInformacoes = idGrupoInformacoes;
+	}
+
+	public BigDecimal getNuDocumento() {
+		return this.nuDocumento;
+	}
+
+	public void setNuDocumento(BigDecimal nuDocumento) {
+		this.nuDocumento = nuDocumento;
 	}
 
 }

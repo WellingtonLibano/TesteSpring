@@ -2,6 +2,7 @@ package br.com.wellington.testespring.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 
 
@@ -15,6 +16,9 @@ import java.util.Date;
 public class TbLogProcessamento implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Column(name="DS_COMENTARIO", length=200)
+	private String dsComentario;
+
 	@Temporal(TemporalType.DATE)
 	@Column(name="DT_PROCESSAMENTO", nullable=false)
 	private Date dtProcessamento;
@@ -25,7 +29,21 @@ public class TbLogProcessamento implements Serializable {
 	@Column(name="ID_ROTINA", nullable=false)
 	private int idRotina;
 
+	@Column(name="ID_SISTEMA", nullable=false)
+	private int idSistema;
+
+	@Column(name="VL_REF_LOG", precision=10, scale=2)
+	private BigDecimal vlRefLog;
+
 	public TbLogProcessamento() {
+	}
+
+	public String getDsComentario() {
+		return this.dsComentario;
+	}
+
+	public void setDsComentario(String dsComentario) {
+		this.dsComentario = dsComentario;
 	}
 
 	public Date getDtProcessamento() {
@@ -50,6 +68,22 @@ public class TbLogProcessamento implements Serializable {
 
 	public void setIdRotina(int idRotina) {
 		this.idRotina = idRotina;
+	}
+
+	public int getIdSistema() {
+		return this.idSistema;
+	}
+
+	public void setIdSistema(int idSistema) {
+		this.idSistema = idSistema;
+	}
+
+	public BigDecimal getVlRefLog() {
+		return this.vlRefLog;
+	}
+
+	public void setVlRefLog(BigDecimal vlRefLog) {
+		this.vlRefLog = vlRefLog;
 	}
 
 }

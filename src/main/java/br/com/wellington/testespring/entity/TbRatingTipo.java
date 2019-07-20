@@ -14,7 +14,6 @@ import javax.persistence.*;
 public class TbRatingTipo implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
 	@Column(name="ID_RATING_TIPO", nullable=false)
 	private int idRatingTipo;
 

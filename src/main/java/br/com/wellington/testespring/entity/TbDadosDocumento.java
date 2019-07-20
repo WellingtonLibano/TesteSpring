@@ -2,6 +2,7 @@ package br.com.wellington.testespring.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 
 
@@ -19,11 +20,11 @@ public class TbDadosDocumento implements Serializable {
 	@Column(name="DT_INFORMACAO", nullable=false)
 	private Date dtInformacao;
 
-	@Column(name="ID_DOCUMENTO", nullable=false)
-	private int idDocumento;
-
 	@Column(name="ID_MAPA", nullable=false)
 	private int idMapa;
+
+	@Column(name="NU_DOCUMENTO", nullable=false, precision=10)
+	private BigDecimal nuDocumento;
 
 	@Column(name="VL_INFORMACAO", nullable=false, length=200)
 	private String vlInformacao;
@@ -39,20 +40,20 @@ public class TbDadosDocumento implements Serializable {
 		this.dtInformacao = dtInformacao;
 	}
 
-	public int getIdDocumento() {
-		return this.idDocumento;
-	}
-
-	public void setIdDocumento(int idDocumento) {
-		this.idDocumento = idDocumento;
-	}
-
 	public int getIdMapa() {
 		return this.idMapa;
 	}
 
 	public void setIdMapa(int idMapa) {
 		this.idMapa = idMapa;
+	}
+
+	public BigDecimal getNuDocumento() {
+		return this.nuDocumento;
+	}
+
+	public void setNuDocumento(BigDecimal nuDocumento) {
+		this.nuDocumento = nuDocumento;
 	}
 
 	public String getVlInformacao() {

@@ -15,14 +15,14 @@ import java.math.BigDecimal;
 public class TbClienteOpcaoMatriz implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Column(name="CD_CLIENTE", nullable=false, precision=10)
+	private BigDecimal cdCliente;
+
 	@Column(name="FL_FILIAL_ALTERA", precision=10)
 	private BigDecimal flFilialAltera;
 
 	@Column(name="FL_INCLUSAO_ACOMP", precision=10)
 	private BigDecimal flInclusaoAcomp;
-
-	@Column(name="ID_CLIENTE", nullable=false)
-	private int idCliente;
 
 	@Column(name="QT_DIAS_CARENCIA", precision=10)
 	private BigDecimal qtDiasCarencia;
@@ -31,6 +31,14 @@ public class TbClienteOpcaoMatriz implements Serializable {
 	private BigDecimal qtDiasDashboard;
 
 	public TbClienteOpcaoMatriz() {
+	}
+
+	public BigDecimal getCdCliente() {
+		return this.cdCliente;
+	}
+
+	public void setCdCliente(BigDecimal cdCliente) {
+		this.cdCliente = cdCliente;
 	}
 
 	public BigDecimal getFlFilialAltera() {
@@ -47,14 +55,6 @@ public class TbClienteOpcaoMatriz implements Serializable {
 
 	public void setFlInclusaoAcomp(BigDecimal flInclusaoAcomp) {
 		this.flInclusaoAcomp = flInclusaoAcomp;
-	}
-
-	public int getIdCliente() {
-		return this.idCliente;
-	}
-
-	public void setIdCliente(int idCliente) {
-		this.idCliente = idCliente;
 	}
 
 	public BigDecimal getQtDiasCarencia() {

@@ -37,10 +37,6 @@ public class TbCliente implements Serializable {
 	@Column(name="FL_ATIVO", precision=10)
 	private BigDecimal flAtivo;
 
-	@Id
-	@Column(name="ID_CLIENTE", nullable=false)
-	private int idCliente;
-
 	public TbCliente() {
 	}
 
@@ -90,14 +86,6 @@ public class TbCliente implements Serializable {
 
 	public void setFlAtivo(BigDecimal flAtivo) {
 		this.flAtivo = flAtivo;
-	}
-
-	public int getIdCliente() {
-		return this.idCliente;
-	}
-
-	public void setIdCliente(int idCliente) {
-		this.idCliente = idCliente;
 	}
 
 }

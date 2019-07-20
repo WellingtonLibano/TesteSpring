@@ -14,14 +14,21 @@ import javax.persistence.*;
 public class TbSistema implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
+	@Column(name="DS_SISTEMA", nullable=false, length=50)
+	private String dsSistema;
+
 	@Column(name="ID_SISTEMA", nullable=false)
 	private int idSistema;
 
-	@Column(name="NM_SISTEMA", nullable=false, length=50)
-	private String nmSistema;
-
 	public TbSistema() {
+	}
+
+	public String getDsSistema() {
+		return this.dsSistema;
+	}
+
+	public void setDsSistema(String dsSistema) {
+		this.dsSistema = dsSistema;
 	}
 
 	public int getIdSistema() {
@@ -30,14 +37,6 @@ public class TbSistema implements Serializable {
 
 	public void setIdSistema(int idSistema) {
 		this.idSistema = idSistema;
-	}
-
-	public String getNmSistema() {
-		return this.nmSistema;
-	}
-
-	public void setNmSistema(String nmSistema) {
-		this.nmSistema = nmSistema;
 	}
 
 }

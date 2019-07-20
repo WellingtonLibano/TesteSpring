@@ -14,6 +14,9 @@ import javax.persistence.*;
 public class TbRotina implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Column(name="DS_ROTINA", nullable=false, length=150)
+	private String dsRotina;
+
 	@Column(name="ID_ROTINA", nullable=false)
 	private int idRotina;
 
@@ -21,6 +24,14 @@ public class TbRotina implements Serializable {
 	private int idSistema;
 
 	public TbRotina() {
+	}
+
+	public String getDsRotina() {
+		return this.dsRotina;
+	}
+
+	public void setDsRotina(String dsRotina) {
+		this.dsRotina = dsRotina;
 	}
 
 	public int getIdRotina() {

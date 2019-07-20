@@ -4,19 +4,19 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
+
+/**
+ * The persistent class for the TB_DOCUMENTOS database table.
+ * 
+ */
 @Entity
 @Table(name="TB_DOCUMENTOS")
 @NamedQuery(name="TbDocumento.findAll", query="SELECT t FROM TbDocumento t")
 public class TbDocumento implements Serializable {
-	
 	private static final long serialVersionUID = 1L;
 
 	@Column(name="DS_NOME", nullable=false, length=200)
 	private String dsNome;
-
-	@Id
-	@Column(name="ID_DOCUMENTO", nullable=false)
-	private int idDocumento;
 
 	@Column(name="NU_DOCUMENTO", nullable=false, precision=10)
 	private BigDecimal nuDocumento;
@@ -33,14 +33,6 @@ public class TbDocumento implements Serializable {
 
 	public void setDsNome(String dsNome) {
 		this.dsNome = dsNome;
-	}
-
-	public int getIdDocumento() {
-		return this.idDocumento;
-	}
-
-	public void setIdDocumento(int idDocumento) {
-		this.idDocumento = idDocumento;
 	}
 
 	public BigDecimal getNuDocumento() {

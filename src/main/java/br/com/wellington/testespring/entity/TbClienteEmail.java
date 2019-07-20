@@ -2,6 +2,7 @@ package br.com.wellington.testespring.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 
 /**
@@ -14,13 +15,21 @@ import javax.persistence.*;
 public class TbClienteEmail implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Column(name="CD_CLIENTE", nullable=false, precision=10)
+	private BigDecimal cdCliente;
+
 	@Column(name="DS_EMAIL", nullable=false, length=100)
 	private String dsEmail;
 
-	@Column(name="ID_CLIENTE", nullable=false)
-	private int idCliente;
-
 	public TbClienteEmail() {
+	}
+
+	public BigDecimal getCdCliente() {
+		return this.cdCliente;
+	}
+
+	public void setCdCliente(BigDecimal cdCliente) {
+		this.cdCliente = cdCliente;
 	}
 
 	public String getDsEmail() {
@@ -29,14 +38,6 @@ public class TbClienteEmail implements Serializable {
 
 	public void setDsEmail(String dsEmail) {
 		this.dsEmail = dsEmail;
-	}
-
-	public int getIdCliente() {
-		return this.idCliente;
-	}
-
-	public void setIdCliente(int idCliente) {
-		this.idCliente = idCliente;
 	}
 
 }

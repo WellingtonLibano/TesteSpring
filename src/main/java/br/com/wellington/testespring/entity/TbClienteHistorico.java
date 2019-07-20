@@ -2,6 +2,7 @@ package br.com.wellington.testespring.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 
 
@@ -15,18 +16,15 @@ import java.util.Date;
 public class TbClienteHistorico implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Column(name="CD_CLIENTE", nullable=false, precision=10)
+	private BigDecimal cdCliente;
+
 	@Column(name="DS_COLUNA_ALTERADA", nullable=false, length=50)
 	private String dsColunaAlterada;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name="DT_ALTERACAO", nullable=false)
 	private Date dtAlteracao;
-
-	@Column(name="ID_CLIENTE", nullable=false)
-	private int idCliente;
-
-	@Column(name="ID_CLIENTE_ALTERACAO")
-	private int idClienteAlteracao;
 
 	@Column(name="VL_ANTIGO", nullable=false, length=150)
 	private String vlAntigo;
@@ -35,6 +33,14 @@ public class TbClienteHistorico implements Serializable {
 	private String vlNovo;
 
 	public TbClienteHistorico() {
+	}
+
+	public BigDecimal getCdCliente() {
+		return this.cdCliente;
+	}
+
+	public void setCdCliente(BigDecimal cdCliente) {
+		this.cdCliente = cdCliente;
 	}
 
 	public String getDsColunaAlterada() {
@@ -51,22 +57,6 @@ public class TbClienteHistorico implements Serializable {
 
 	public void setDtAlteracao(Date dtAlteracao) {
 		this.dtAlteracao = dtAlteracao;
-	}
-
-	public int getIdCliente() {
-		return this.idCliente;
-	}
-
-	public void setIdCliente(int idCliente) {
-		this.idCliente = idCliente;
-	}
-
-	public int getIdClienteAlteracao() {
-		return this.idClienteAlteracao;
-	}
-
-	public void setIdClienteAlteracao(int idClienteAlteracao) {
-		this.idClienteAlteracao = idClienteAlteracao;
 	}
 
 	public String getVlAntigo() {

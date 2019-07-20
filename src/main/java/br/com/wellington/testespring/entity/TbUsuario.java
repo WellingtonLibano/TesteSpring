@@ -53,7 +53,6 @@ public class TbUsuario implements Serializable {
 	@Column(name="FL_ACESSO_TERCA", precision=10)
 	private BigDecimal flAcessoTerca;
 
-	@Id
 	@Column(name="ID_USUARIO", nullable=false)
 	private int idUsuario;
 

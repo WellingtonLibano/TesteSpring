@@ -17,7 +17,6 @@ public class TbRelatorio implements Serializable {
 	@Column(name="DS_RELATORIO", nullable=false, length=50)
 	private String dsRelatorio;
 
-	@Id
 	@Column(name="ID_RELATORIO", nullable=false)
 	private int idRelatorio;
 
