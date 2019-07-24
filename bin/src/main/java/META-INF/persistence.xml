@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="TesteSpring">
+		<class>br.com.wellington.testespring.entity.TbCarteiraDocumento</class>
+		<class>br.com.wellington.testespring.entity.TbCliente</class>
+		<class>br.com.wellington.testespring.entity.TbClienteCarteira</class>
+		<class>br.com.wellington.testespring.entity.TbClienteConsulta</class>
+		<class>br.com.wellington.testespring.entity.TbClienteEmail</class>
+		<class>br.com.wellington.testespring.entity.TbClienteHistorico</class>
+		<class>br.com.wellington.testespring.entity.TbClienteInformacaoDesejada</class>
+		<class>br.com.wellington.testespring.entity.TbClienteOpcaoMatriz</class>
+		<class>br.com.wellington.testespring.entity.TbClienteResumo</class>
+		<class>br.com.wellington.testespring.entity.TbClienteResumoGrpInf</class>
+		<class>br.com.wellington.testespring.entity.TbClienteTelefone</class>
+		<class>br.com.wellington.testespring.entity.TbComunicacoe</class>
+		<class>br.com.wellington.testespring.entity.TbDadosDocumento</class>
+		<class>br.com.wellington.testespring.entity.TbDadosFormula</class>
+		<class>br.com.wellington.testespring.entity.TbDocumento</class>
+		<class>br.com.wellington.testespring.entity.TbDocumentoRatingFormula</class>
+		<class>br.com.wellington.testespring.entity.TbFormula</class>
+		<class>br.com.wellington.testespring.entity.TbInformacoesAcompanhada</class>
+		<class>br.com.wellington.testespring.entity.TbInformacoesGrupo</class>
+		<class>br.com.wellington.testespring.entity.TbLogProcessamento</class>
+		<class>br.com.wellington.testespring.entity.TbMapaInformacoe</class>
+		<class>br.com.wellington.testespring.entity.TbRatingClassificacao</class>
+		<class>br.com.wellington.testespring.entity.TbRatingTipo</class>
+		<class>br.com.wellington.testespring.entity.TbRelatorio</class>
+		<class>br.com.wellington.testespring.entity.TbRelatorioInformacoe</class>
+		<class>br.com.wellington.testespring.entity.TbRotina</class>
+		<class>br.com.wellington.testespring.entity.TbSistema</class>
+		<class>br.com.wellington.testespring.entity.TbUsuario</class>
+	</persistence-unit>
+</persistence>
