@@ -3,11 +3,6 @@ package br.com.wellington.testespring.entity;
 import java.io.Serializable;
 import javax.persistence.*;
 
-
-/**
- * The persistent class for the TB_SISTEMA database table.
- * 
- */
 @Entity
 @Table(name="TB_SISTEMA")
 @NamedQuery(name="TbSistema.findAll", query="SELECT t FROM TbSistema t")
@@ -18,7 +13,7 @@ public class TbSistema implements Serializable {
 	private String dsSistema;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ID_SISTEMA", nullable=false)
 	private int idSistema;
 
@@ -40,5 +35,4 @@ public class TbSistema implements Serializable {
 	public void setIdSistema(int idSistema) {
 		this.idSistema = idSistema;
 	}
-
 }
